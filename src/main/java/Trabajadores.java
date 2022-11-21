@@ -5,6 +5,15 @@ public abstract class Trabajadores {
 	private String estadoCivil;
 	private String run;
 	private String horario;
+	public Trabajadores (String titulo, String nombreTrabajador, String direccionTrabajador, String estadoCivil, String run, String horario){
+		this.titulo=titulo;
+		this.nombreTrabajador=nombreTrabajador;
+		this.direccionTrabajador=direccionTrabajador;
+		this.estadoCivil=estadoCivil;
+		this.run=run;
+		this.horario=horario;
+	}
+	public abstract String getTipo();
 
 	public String getTitulo() {
 		return this.titulo;
@@ -54,7 +63,4 @@ public abstract class Trabajadores {
 		this.horario = horario;
 	}
 
-	public String getTipo() {
-		throw new UnsupportedOperationException();
-	}
 }

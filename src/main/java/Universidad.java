@@ -4,8 +4,8 @@ public class Universidad {
 	private String nombreUniversidad;
 	private String direccionUniversidad;
 	private String tipoUniversidad;
-	public ArrayList<Facultad> facultades = new ArrayList<Facultad>();
-	public ArrayList<Trabajadores> trabajadores = new ArrayList<Trabajadores>();
+	private ArrayList<Facultad> facultades = new ArrayList<Facultad>();
+	private ArrayList<Trabajadores> trabajadores = new ArrayList<Trabajadores>();
 
 	public String getNombreUniversidad() {
 		return this.nombreUniversidad;
@@ -29,5 +29,17 @@ public class Universidad {
 
 	public void setTipoUniversidad(String tipoUniversidad) {
 		this.tipoUniversidad = tipoUniversidad;
+	}
+	public ArrayList<Profesor> buscarProfesor(String nombreProfesor){
+		ArrayList<Profesor> profesores = new ArrayList<Profesor>();
+		for(Trabajadores trabajador:this.trabajadores){
+			if(trabajador.getTipo().equals("Profesor")){
+				if(trabajador.getNombreTrabajador().equals(nombreProfesor)){
+					profesores.add((Profesor) trabajador);
+				}
+				return profesores;
+			}
+		}
+		return null;
 	}
 }
